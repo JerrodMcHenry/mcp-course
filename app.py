@@ -12,3 +12,15 @@ response = client.models.generate_content(
 )
 
 print(response.text)
+
+chat = client.chats.create(model="gemini-2.5-flash")
+
+response = chat.send_message("What is the current price of Bitcoin?")
+print(response.text)
+
+print(response)
+
+url = f"https://www.binance.com/en/price/bitcoin"
+response = requests.get(url)
+data = response.json()
+print(data)
